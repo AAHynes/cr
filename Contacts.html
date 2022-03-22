@@ -58,15 +58,31 @@
 
     <div style="padding: 0 16px">
       <h2>Contacts</h2>
-      <p>
-        This example use media queries to stack the topnav vertically when the
-        screen size is 600px or less.
-      </p>
-      <p>
-        You will learn more about media queries and responsive web design later
-        in our CSS Tutorial.
-      </p>
-      <h4>Resize the browser window to see the effect.</h4>
+      <input id="email" placeholder="E-mail">
+      </br>
+      <input id="fullName" placeholder="Full Name">
+      </br>
+      <input id="phone" placeholder="phone">
     </div>
   </body>
 </html>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyD1uxkiA4yVRZhJ8emqnBpEpU11Y_9cu0M",
+    authDomain: "lc-cs-project-53a30.firebaseapp.com",
+    databaseURL: "https://lc-cs-project-53a30-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "lc-cs-project-53a30",
+    storageBucket: "lc-cs-project-53a30.appspot.com",
+    messagingSenderId: "713930830298",
+    appId: "1:713930830298:web:da7178f0bc782cfb4710e3"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>
