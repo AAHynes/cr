@@ -59,10 +59,15 @@
     <div style="padding: 0 16px">
       <h2>Contacts</h2>
       <input id="email" placeholder="E-mail">
-      </br>
+      <br>
       <input id="fullName" placeholder="Full Name">
-      </br>
-      <input id="phone" placeholder="phone">
+      <br>
+      <input id="phone" placeholder="Phone Number">
+      <br>
+      <br>
+      <button>
+        Submit
+      </button>
     </div>
   </body>
 </html>
@@ -85,4 +90,13 @@
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
+  const postData = {
+    'email': email,
+    'fullName': fullname,
+    'phone': phone
+  }
+  function pushData(){
+    const db = getDatabase();
+    post(ref(db, 'contacts/'))
+  }
 </script>
