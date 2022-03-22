@@ -90,13 +90,60 @@
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-  const postData = {
-    'email': email,
-    'fullName': fullname,
-    'phone': phone
-  }
-  function pushData(){
-    const db = getDatabase();
-    post(ref(db, 'contacts/'))
-  }
+const myDBCxn = firebase.database().ref("/contacts");
+
+
+// Tell JavaScript to call saveContacts when SUBMIT button is clicked
+//const btn = document.getElementById("submit-data");
+//btn.addEventListener("click", saveContacts);
+//sets the variable btn(button) to the button id
+// uses the listner for a click and then run teh function
+const btn2 = document.getElementById("submit");
+btn2.addEventListener("click", insertRecord);
+//sets the variable btn(button) to the button id
+// uses the listner for a click and then run teh function
+
+
+// Submit clicked so post the data to the server
+//function saveContacts() {
+  //alert("SUBMIT clicked!!!");
+
+  // read the data from the email field
+  //const emailField = document.getElementById("email");
+ // const emailFieldValue = emailField.value;
+ // alert(emailFieldValue);
+  // reset form
+ // emailField.value = ""; // clear the field
+ // emailField.focus(); // set the focus
+  // code to save the data to Firebase GOES HERE!
+  
+ // const data = myDBCxn.push();
+ // data.set({ email: emailFieldValue });
+
+
+//}
+
+ function insertRecord() {
+  alert("SUBMIT clicked!!!");
+  const emailField = document.getElementById("email");
+  const emailFieldValue = emailField.value;
+ // alert(emailFieldValue);
+  // reset form
+  emailField.value = ""; // clear the field
+  emailField.focus(); // set the focus
+  // code to save the data to Firebase GOES HERE!
+  
+   
+  const fN = document.getElementById("fullName");
+  // sets the const fN to the value in fName input field
+  const fNvalue = fN.value;
+  fN.value = "";
+  fN.focus();
+  // resets the input field to empty
+  const 
+  const data = myDBCxn.push();
+  data.set({email: emailFieldValue, fName:fNvalue, sName: sNValue, age: ageValue, dob: dobValue});
+  
+}
+
 </script>
